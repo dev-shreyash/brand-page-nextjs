@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import { IonIcon } from "@ionic/react";
 import {
@@ -44,6 +44,11 @@ const Navbar: React.FC = () => {
   const [accordionOpen, setAccordionOpen] = useState<{ [key: number]: boolean }>(
     {}
   );
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); 
+  }, []);
 
   const toggleAccordion = (index: number) => {
     setAccordionOpen((prevState) => ({
@@ -81,14 +86,14 @@ const Navbar: React.FC = () => {
                 href={link.link}
                 className="relative text-secondary hover:text-primary duration-500 font-bold cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-primary before:origin-left before:h-[1px] before:w-0 hover:before:w-[30%] before:bottom-0 before:left-0 flex items-center justify-between"
                 onClick={(e) => {
-                  if (link.submenu && window.innerWidth <= 768) {
+                  if (link.submenu && isClient && window.innerWidth <= 768) {
                     e.preventDefault();
                     toggleAccordion(index);
                   }
                 }}
               >
                 {link.name}
-                {link.submenu && window.innerWidth <= 768 && (
+                {link.submenu && isClient && window.innerWidth <= 768 && (
                   <IonIcon
                     icon={accordionOpen[index] ? removeOutline : addOutline}
                     className="ml-2"
@@ -98,9 +103,9 @@ const Navbar: React.FC = () => {
               {link.submenu && (
                 <ul
                   className={`lg:absolute md:relative sm:relative lg:w-32 sm:w-100% font-bold bg-white shadow-md  pt-4  ${
-                    window.innerWidth > 768
+                    isClient && window.innerWidth > 768
                       ? "hidden group-hover:block"
-                      : accordionOpen[index]
+                      : isClient && accordionOpen[index]
                       ? "block"
                       : "hidden"
                   }  sm:border-b-secondary border-b-2`}
