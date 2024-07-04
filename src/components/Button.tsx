@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Button = () => {
-  return (
- 
-      <button className='bg-primary py-2 px-4 rounded font-bold hover:bg-secondary transition-colors duration-500'>Login</button>
- 
-  )
+interface ButtonProps {
+  name: string;
 }
 
-export default Button
+const Button: React.FC<ButtonProps> = ({ name }) => {
+  const btnName = name || 'Button'; 
+  return (
+    <button className='bg-primary py-3 px-4 rounded-sm font-bold hover:bg-secondary transition-colors duration-500'>
+      {btnName}
+    </button>
+  );
+};
+
+export default Button;
