@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
-import Button from "./Button";
+import { ButtonPrimary } from "./Button";
 import { IonIcon } from "@ionic/react";
 import {
   closeOutline,
@@ -41,13 +41,13 @@ const Navbar: React.FC = () => {
   ];
 
   const [open, setOpen] = useState(false);
-  const [accordionOpen, setAccordionOpen] = useState<{ [key: number]: boolean }>(
-    {}
-  );
+  const [accordionOpen, setAccordionOpen] = useState<{
+    [key: number]: boolean;
+  }>({});
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); 
+    setIsClient(true);
   }, []);
 
   const toggleAccordion = (index: number) => {
@@ -58,14 +58,15 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="shadow-md w-full  left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-gray-800">
+    <div className="shadow-md w-full  left-0 z-50">
+      <div className="bg-white z-50">
+       <div className="container flex items-center justify-between py-4 md:px-10 px-7 lg:max-w-[1320px] m-auto md:max-w-[950px] sm:flex">
+       <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-gray-800">
           InsoTrans
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+          className="text-3xl  cursor-pointer md:hidden"
         >
           <IonIcon
             icon={open ? closeOutline : menuOutline}
@@ -74,7 +75,7 @@ const Navbar: React.FC = () => {
         </div>
         <ul
           className={`md:flex md:items-center md:pb-0 pb-3 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 px-3 transition-all duration-500 ease-in ${
-            open ? "top-10 " : "top-[-690px] "
+            open ? "top-[100px] " : "top-[-690px] "
           }`}
         >
           {Links.map((link, index) => (
@@ -136,9 +137,10 @@ const Navbar: React.FC = () => {
                 className="border-b-2 border-b-gray-200 focus:outline-none w-24"
               />
             </div>
-            <Button name="Track parcel" />
+            <ButtonPrimary name="Track parcel" />
           </div>
         </ul>
+       </div>
       </div>
     </div>
   );
