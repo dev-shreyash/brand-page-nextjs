@@ -16,8 +16,8 @@ import {
 } from "ionicons/icons";
 const TopHeader = () => {
   return (
-    <div className="flex bg-secondary text-white w-full justify-center lg:py-4 sm:py-2">
-     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center sm:flex-row sm:items-center lg:max-w-[1320px] px-10 lg:space-y-4 sm:space-y-0 sm:space-x-10">
+    <div className="flex bg-secondary text-white w-full justify-center lg:py-4 sm:py-4 relative z-[99]">
+     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center sm:flex-row sm:items-center lg:max-w-[1320px] px-10 lg:space-y-4 sm:space-y-0 sm:space-x-10 sm:py-2">
   <div className="flex flex-wrap items-center space-x-3 w-full sm:items-center">
     <div className="flex items-center space-x-2">
       <IonIcon icon={timeOutline} style={{ color: "white" }} />
@@ -33,7 +33,7 @@ const TopHeader = () => {
     </div>
   </div>
 
-  <div className="flex items-center justify-center space-x-2 mt-3 sm:mt-0">
+  <div className="flex items-center justify-center space-x-2 mt-0 sm:mt-0 ">
     <a href="#" className="group">
       <IonIcon
         icon={logoFacebook}

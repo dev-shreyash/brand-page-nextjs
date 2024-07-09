@@ -1,11 +1,8 @@
-"use client"
+"use client";
 
 import React from 'react';
 import { IonIcon } from "@ionic/react";
-import {
-   arrowForwardOutline,
-   arrowBackOutline
-} from "ionicons/icons";
+import { arrowForwardOutline, arrowBackOutline } from "ionicons/icons";
 
 interface ButtonProps {
   name: string;
@@ -16,7 +13,7 @@ export const ButtonPrimary: React.FC<ButtonProps> = ({ name, arrow = 'none' }) =
   const btnName = name || 'Button'; 
 
   return (
-    <button className='bg-primary py-3 px-4 border-primary hover:border-secondary border-2 rounded-sm font-bold hover:bg-secondary transition-colors duration-500 flex items-center'>
+    <button className='bg-primary py-3 px-4 sm:py-2 sm:px-3 lg:py-3 lg:px-4 border-primary hover:border-secondary border-2 text-sm sm:text-xs md:text-sm rounded-sm font-bold hover:bg-secondary transition-colors duration-500 flex items-center'>
       {arrow === 'left' && (
         <IonIcon
           icon={arrowBackOutline}
@@ -38,7 +35,7 @@ export const ButtonSecondary: React.FC<ButtonProps> = ({ name, arrow = 'none' })
   const btnName = name || 'Button'; 
 
   return (
-    <button className='bg-transparent border-primary border-2 py-3 px-4 rounded-sm font-bold hover:bg-primary transition-colors duration-500 flex items-center'>
+    <button className='bg-transparent border-primary border-2 py-3 px-4 sm:py-2 sm:px-3 lg:py-3 lg:px-4 text-sm sm:text-xs md:text-sm rounded-sm font-bold hover:bg-primary transition-colors duration-500 flex items-center'>
       {arrow === 'left' && (
         <IonIcon
           icon={arrowBackOutline}

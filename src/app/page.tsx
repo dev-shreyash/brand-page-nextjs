@@ -9,6 +9,8 @@ export default function Home() {
     <TopHeader/>
     <Navbar/>
     <BannerArea/>
+    <BannerArea/>
+
   </div>
   );
 }

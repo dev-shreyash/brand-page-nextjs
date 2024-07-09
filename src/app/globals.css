@@ -31,3 +31,127 @@ body {
     text-wrap: balance;
   }
 }
+
+* {
+  scrollbar-width: none;
+  font-synthesis: none;
+  -webkit-scrollbar {
+      display: none; /* Hide scrollbar in Chrome, Safari, Opera */
+  }
+  padding: 0;
+ /* // margin: 0;
+ // box-sizing: border-box; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+html, body {
+  font-family: "Lato", sans-serif;
+  /* //margin: 0; */
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body {
+  position: relative; /* Ensure relative positioning */
+  min-height: 100vh; /* Ensure body covers the entire viewport height */
+}
+
+#root {
+  overflow-x: hidden; /* Hide any overflow from the root element */
+  min-height: 100vh; /* Ensure root element covers the entire viewport height */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px; /* Adjust to align thumb with track */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+/* Navbar.css */
+.navbar-enter {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.navbar-enter-active {
+  transform: scaleY(1);
+}
+
+.navbar-exit {
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.navbar-exit-active {
+  transform: scaleY(0);
+}
